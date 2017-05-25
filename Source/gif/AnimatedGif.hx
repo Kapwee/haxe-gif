@@ -95,12 +95,22 @@ class AnimatedGif extends Sprite{
 		return this;
 	}
 
+	/**
+	 * blablabla
+	 * @return
+	 */
 	private function nextFrame():Int{
-		if(pos>=0) bmaps[pos].visible=(frames[pos].disposalMethod==1);
+		if (pos >= 0) {
+			bmaps[pos].visible=(frames[pos].disposalMethod==1);
+		}
 		pos=(pos+1)%bmaps.length;
-		if(pos==0) for(i in 1 ... bmaps.length) bmaps[i].visible=false;
+		if (pos == 0) {
+			for (i in 1 ... bmaps.length) {
+				bmaps[i].visible=false;
+			}
+		}
 		bmaps[pos].visible=true;
-		return frames[pos].delayTime>10?frames[pos].delayTime*10:100;
+		return frames[pos].delayTime*10;
 	}
 
 	private function timerTick(_){
