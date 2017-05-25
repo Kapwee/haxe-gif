@@ -108,5 +108,13 @@ class AnimatedGif extends Sprite{
 		timer.delay=nextFrame();
 		timer.start();
 	}
+	
+	public function debug() {
+		var i:Int = 0;
+		for (frame in frames) {
+			trace(i + " " + frame.delayTime);
+			i++;
+		}
+	}
 
 }
